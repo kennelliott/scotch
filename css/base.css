@@ -1,0 +1,141 @@
+/* fonts */
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* site styles */
+body {
+  margin: 0; }
+
+.clear:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.clear {
+  display: inline-block; }
+
+html[xmlns] .clear {
+  display: block; }
+
+* html .clear {
+  height: 1%; }
+
+.cf:after, .cf:before {
+  content: " ";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+/* page styles */
+body {
+  font-family: Helvetica, Arial, sans-serif; }
+
+/* list styles */
+.list {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto; }
+
+.section {
+  display: inline-block;
+  margin: 10px 0;
+  vertical-align: top; }
+
+.label-taste {
+  height: 16px;
+  font-size: 11px;
+  text-align: center; }
+
+.label-section {
+  text-align: center; }
+
+/* dodecagons */
+.dodecagon {
+  margin: 0 auto; }
+
+.path-vertices, .path-outer {
+  fill: none;
+  stroke: #dcdcdc;
+  stroke-width: 1.5;
+  pointer-events: none; }
+
+.path-outer {
+  /*stroke-dasharray: 2, 4;*/
+  fill: #ffffff; }
+
+.path-vertices {
+  display: none;
+  stroke: #000000; }
+
+.path-avg {
+  fill: none;
+  stroke: #dcdcdc;
+  stroke-width: 1;
+  pointer-events: none; }
+
+.path-ownAvg {
+  fill: RoyalBlue;
+  fill-opacity: 0.6;
+  stroke: none;
+  pointer-events: none; }
+
+.path-voronoi {
+  fill: none;
+  stroke: none;
+  pointer-events: all; }
+
+text {
+  fill: #000000;
+  font-size: 12px; }
+
+/* panel */
+.panel {
+  position: relative;
+  display: none;
+  width: 96%;
+  margin: 50px 2% 20px 2%;
+  background-color: #f0f0f0; }
+
+.panelArrow {
+  position: absolute;
+  top: -42px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 45px solid #f0f0f0; }
+
+.panelHeader {
+  height: 100px; }

@@ -1,0 +1,19 @@
+{
+  "name": "scotch",
+  "version": "0.0.0",
+  "authors": [
+    "kennedy elliott <kenn.elliott@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-smooth-scroll": "https://github.com/kswedberg/jquery-smooth-scroll.git#~1.5.5",
+    "d3": "~3.5.5"
+  }
+}
