@@ -11,6 +11,7 @@ var init = {
 
 		_this.parseData();
 		list.init();
+		_this.post();
 	},
 
 	parseData: function() {
@@ -90,6 +91,12 @@ var init = {
 
 		console.log(info)
 
+	},
+
+	post: function() {
+		window.onresize = function() {
+
+		};
 	}
 
 };
@@ -102,8 +109,7 @@ var list = {
 
 		_this.getWidth();
 
-		dodecagon.init(_this.w);
-
+		dodecagon.init();
 		_this.draw();
 		panel.init();
 	},
@@ -112,8 +118,9 @@ var list = {
 		var _this = this,
 			W = _this.$parent.offsetWidth;
 
-		if (W > 0) _this.numInRow = 6;
+		_this.numInRow = Math.floor(W / 150);
 
+		_this.sectionp = 100 / _this.numInRow;
 		_this.sectionw = W / _this.numInRow;
 		_this.w = _this.sectionw * 0.8;
 	},
@@ -130,12 +137,12 @@ var list = {
 				return 'js-section-' + d.id;
 			})
 			.attr('class', 'section cf')
-			.style('width', _this.sectionw + 'px');
+			.style('width', _this.sectionp + '%');
 
 		section.append('p')
 			.attr('class', 'label-taste');
 
-		dodecagon.draw(section, _this.w);
+		dodecagon.draw(section);
 
 		var label = section.append('p')
 			.attr('class', 'label-section')
@@ -155,7 +162,7 @@ var dodecagon = {
 	},
 	
 
-	init: function(w) {
+	init: function() {
 		var _this = this;
 
 		_this.line = d3.svg.line()
@@ -164,33 +171,33 @@ var dodecagon = {
 			.interpolate('linear');
 
 		_this.voronoi = d3.geom.voronoi()
-			.clipExtent([[0, 0], [w, w]]);
+			.clipExtent([[0, 0], [list.w, list.w]]);
 
-		_this.setRadius(w);
+		_this.setRadius();
 
 		_this.vertices = _this.getVertices();
 		_this.vertices_s = _this.vertices.slice(0, -1),
 		_this.avgPath = _this.getAvgPath(info.avgs);
 	},
 
-	setRadius: function(w) {
+	setRadius: function() {
 		var _this = this;
 
-		_this.r = (w - (_this.padding * 2)) / 2,
+		_this.r = (list.w - (_this.padding * 2)) / 2,
 		_this.centerPt = [_this.r, _this.r],
 		_this.a = 360 / _this.numSides,
 		_this.mult = _this.r / 5;
 	},
 
-	draw: function(section, w) {
+	draw: function(section) {
 		var _this = this;
 
 		var svg = section.append('div')
 			.attr('class', 'dodecagon')
-			.style('width', w + 'px')
+			.style('width', list.w + 'px')
 			.append('svg')
-			.attr('width', w)
-			.attr('height', w)
+			.attr('width', list.w)
+			.attr('height', list.w)
 			.append('g')
 			.attr('transform', 'translate(' + _this.padding + ',' + _this.padding + ')');
 
