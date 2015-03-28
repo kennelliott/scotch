@@ -399,7 +399,6 @@ var panel = {
 			_this.queueNewPanel($section, id, rowPos);
 
 		} else {
-
 			console.log('option 3')
 
 			var rowPos = ((oIndex + list.numInRow) % list.numInRow),
@@ -408,7 +407,6 @@ var panel = {
 
 			queue().defer(_this.slidePanelUp)
 				.await(function() {
-
 					_this.queueNewPanel($section, id, rowPos);
 					_this.slidePanelDown($beforeChild);
 					info.row = row;

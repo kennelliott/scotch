@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
     <title>Title goes here</title>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/base.css">
     
 </head>
@@ -11,7 +13,30 @@
 <div class="main">
 
 
-	<div id="js-list" class="list"></div>
+	<div class="searchContainer">
+		<div class="container">
+			<h1>scotch finder</h1>
+
+			<div class="searchTool">
+				<input id="js-input" class="searchInput" type="text" />
+				<div id="js-searchResults" class="searchResults"></div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="exploreContainer">
+		<div class="container">
+			<p id="js-exploreBtn" class="exploreBtn"><i class="fa fa-angle-up"></i> explore <i class="fa fa-angle-up"></i></p>
+		</div>
+	</div>
+
+
+
+	<div id="js-list" class="list container"></div>
+
+
+
+
 
 	<div id="js-panel" class="panel cf">
 		<span id="js-panelArrow" class="panelArrow"></span>
@@ -30,7 +55,6 @@
 				</div>
 				<!-- <div id="map"></div> -->
 			</div>
-
 		</div>
 	</div>
 
